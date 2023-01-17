@@ -1,0 +1,28 @@
+version: '1'
+services:
+  app:
+    image: 'user-account-api'
+    build:
+      context: .
+    container_name: app
+    ports:
+      - "9091:9091"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/user_account
+      - SPRING_DATASOURCE_USERNAME=udupa
+      - SPRING_DATASOURCE_PASSWORD=udupa12345
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: postgres:15-alpine
+    container_name: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - /postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=udupa
+      - POSTGRES_PASSWORD=udupa12345
+      - POSTGRES_DB=user_account

@@ -1,0 +1,3 @@
+CREATE TABLE public.users ( id serial4 NOT NULL, first_name varchar NULL, last_name varchar NULL, email varchar NULL, monthly_salary float8 NULL, monthly_expense float8 NULL, CONSTRAINT user_primary_key PRIMARY KEY (id) );
+
+CREATE TABLE public.account ( id serial4 NOT NULL, user_id int4 NULL, "type" varchar NULL, balance float8 NULL, interest_rate float8 NULL, CONSTRAINT account_primary_key PRIMARY KEY (id) );
