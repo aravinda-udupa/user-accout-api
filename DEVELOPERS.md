@@ -10,6 +10,8 @@
 ## deploying using docker
 ./docker-compose up
 
+### HOST
+http://<host>:9091
 ### List of APIs
 #### Create User
 #####  POST /api/v1/user
